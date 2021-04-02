@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-with, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ </head>
+ 
+ <body>
+ 	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="manager_home.html">Expense Reimbursement System</a>
+				<a class="nav-item nav-link" href="manager_home.html">Home</a>
+				<a class="nav-item nav-link" href="reimbursement_manager.html">View all reimbursement</a>
+				<a class="nav-item nav-link" href="view_all_employees.html">View all employees</a>
+			
+			<div class="nav-list-right" id="navbarMenuRight">
+				<a href="logout.html">Log out</a>
+			</div>
+			
+		</nav>
+	</div>
+	
+	<div class = "containier">
+	<table id="view-employees">
+		placeholder_ViewAllEmployees
+	</table>
+	</div>
+		<div class = "containier">
+	<table id="view-employees">
+		placeholder_ViewAllEmployees
+	</table>
+	</div>
+	
+	
+ </body>
+ </html>
+ 
+  

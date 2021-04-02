@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-with, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>Expense Reimbursement System</title>
+</head>
+
+<style>
+#navbarMenuRight {
+	text-decoration: none;
+	color: black;
+}
+
+h1 {
+	text-align:center;
+	color: black;
+}
+.nav-item, .nav-item-active, .nav-list-right {
+/* 		text-decoration: none; */
+		color: white;
+		border: 1px;
+		border-color:white;
+	}
+</style>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="manager_home.html">Expense Reimbursement System</a>
+				<a class="nav-item nav-link" href="manager_home.html">Home</a>
+				<a class="nav-item nav-link" href="pending_manager.html">View all Pending Reimbursements</a>
+				<a class="nav-item nav-link" href="resolved_manager.html">View all Resolved Reimbursements</a>
+				<a class="nav-item nav-link" href="reimbursement_by_id.html">View all Reimbursements by Employee Id</a>
+				<a class="nav-item nav-link" href="view_all_employees.html">View all Employees</a>
+			
+			<div class="nav-list-right" id="navbarMenuRight">
+				<a href="logout.html">Log out</a>
+			</div>
+			
+		</nav>
+	</div>
+	
+	<div class="container">
+		<form action="../ViewReimbursementByEmployeeIdServlet" method="get">
+			<div class="form-group">
+				<label for="employeeId">Employee Id</label>
+				<input type="number" class="form-control" name="employeeId" id="employeeId" placeholder="Enter Employee ID:" required>
+			</div>
+			<div class="form-group">
+					<button type="submit" class="form-control" id="log-in-btn">Log-In</button>
+				</div>
+	</div>
+	
+	<div class="container">
+		<table>
+			placeholder_AllById
+		</table>
+		
+	</div>
+	
+	</body>
+	</html>
+	

@@ -1,0 +1,26 @@
+package com.revature.dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.revature.model.Employee;
+import com.revature.model.Reimbursement;
+
+public interface EmployeeDAO {
+
+	public void updateEmployeeInfo(Employee employee, Connection con) throws SQLException;
+
+	public Employee logInVerification(String eUsername, String ePassword, Connection con) throws SQLException;
+
+	public void submitReimbursementRequest(boolean isPendingReimbursement, boolean isApproved,
+			String reimbursementDescription, double reimbursementAmount, int reimbursementEmployeeId, Connection con)
+			throws SQLException;
+
+	public List<Reimbursement> viewAllPendingReimbursementsByEmployeeId(boolean isPendingReimbursement,
+			int reimbursementEmployeeId, Connection con) throws SQLException;
+
+	public List<Reimbursement> viewAllResolvedReinbursementsByEmployeeId(boolean isPendingReimbursement,
+			int reimbursementEmployeeId, Connection con) throws SQLException;
+
+}

@@ -1,0 +1,30 @@
+package com.revature.services;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.revature.dao.ManagerDAO;
+import com.revature.dao.ManagerDAOImpl;
+import com.revature.util.ConnectionUtil;
+
+public class ManagerService {
+	public ManagerDAO managerDAO;
+
+	public ManagerService(ManagerDAO managerDAO) {
+		this.managerDAO = managerDAO;
+	}
+
+	public ManagerService() {
+		this.managerDAO = new ManagerDAOImpl();
+	}
+
+	public void managerLogIn(String username, String password) throws SQLException {
+		boolean login = true;
+
+		try (Connection con = ConnectionUtil.getConnection()) {
+
+			login = managerDAO.logInVerification(username, password, con);
+
+		}
+	}
+}

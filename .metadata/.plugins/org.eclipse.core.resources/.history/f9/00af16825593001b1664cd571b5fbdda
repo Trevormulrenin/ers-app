@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>Expense Reimbursement System</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="/ers-app/EmployeeHomeServlet">Expense Reimbursement System</a>
+					 	<a class="nav-item nav-link" href="/ers-app/EmployeeHomeServlet">Home</a>
+						<a class="nav-item nav-link active" href="reimbursement_home.html">Submit a reimbursement</a>
+
+			<div class="nav-list-right" id="navbarMenuRight">
+				<a class="nav-item nav-link" href="logout.html">Log out</a>
+			</div>
+
+		</nav>
+	</div>
+	<div class="container">
+		<h1 class="h3"> Please fill out the reimbursement request form below.</h1>
+		<form action="http://localhost:8080/ers-app/ReimbursementForm" method="get">
+			<table style="position:relative;top:40%;" class="table" id="reimbursement-table">
+				<tr>
+					<td>Reimbursement Reason:</td>
+					<td><input type="text" id="reimbursement-reason"
+						name="reimbursementDescription" required></td>
+				</tr>
+				<tr>
+					<td>Reimbursement Amount</td>
+					<td><input type="number" step="any" name="reimbursementAmount" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Your Employee ID:</td>
+					<td><input type="number" name="reimbursementEmployeeId" required>
+					</td>
+				</tr>
+			</table>
+			<div class="container">
+				<button type="submit" class="btn btn-dark">Submit Request</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

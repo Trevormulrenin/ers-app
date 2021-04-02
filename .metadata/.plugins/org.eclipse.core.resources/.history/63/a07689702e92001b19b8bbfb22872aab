@@ -1,0 +1,59 @@
+package com.revature.services;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.revature.dao.ManagerDAO;
+import com.revature.dao.ManagerDAOImpl;
+import com.revature.model.Employee;
+import com.revature.model.Manager;
+import com.revature.model.Reimbursement;
+import com.revature.util.ConnectionUtil;
+
+public class ManagerService {
+	public ManagerDAO managerDAO;
+
+	public ManagerService(ManagerDAO managerDAO) {
+		this.managerDAO = managerDAO;
+	}
+
+	public ManagerService() {
+		this.managerDAO = new ManagerDAOImpl();
+	}
+
+	public Manager managerLogIn(String username, String password) throws SQLException {
+		Manager manager = new Manager();
+
+		try (Connection con = ConnectionUtil.getConnection()) {
+
+			manager = managerDAO.logInVerification(username, password, con);
+
+		}catch (SQLException e) {
+			System.out.println("SQL Error");
+		}
+		return manager;
+	}
+	
+	public List<Employee> viewAllEmployees() throws SQLException {
+		List<Employee> e = new ArrayList<>();
+		try (Connection con = ConnectionUtil.getConnection()) {
+			e = managerDAO.viewAllEmployees(con);
+		}catch (SQLException e) {
+			System.out.println("SQL Error");
+		}
+		return e;
+	}
+	
+	public List<Reimbursement> viewAllPendingReimbursements() throws SQLException {
+		List<Reimbursement> pending = new ArrayList<>();
+		try (Connection con = ConnectionUtil.getConnection()) {
+			pending = managerDAO.viewAllPendingReimbursements(true, con);
+		}catch (SQLException e) {
+			System.out.println("SQL Error");
+		}
+		
+		return pending;
+	}
+}

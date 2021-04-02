@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Trevor\Desktop\Aggregate8Week\ers-app\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+632179367.index
+1981434172.index
+583709257.index
+396045857.index
+3877759868.index
+431876329.index
+1010074313.index

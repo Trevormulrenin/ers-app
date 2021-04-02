@@ -1,0 +1,30 @@
+package com.revature.services;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.eq;
+
+import java.sql.Connection;
+
+import org.junit.BeforeClass;
+import org.mockito.MockedStatic;
+
+import com.revature.dao.ManagerDAO;
+import com.revature.util.ConnectionUtil;
+
+public class ManagerServiceTest {
+	ManagerService managerService;
+	public static Connection mockConnection;
+	public static MockedStatic<ConnectionUtil> mockedStatic;
+	public static ManagerDAO managerDAO;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		managerDAO = mock(ManagerDAO.class);
+		mockConnection = mock(Connection.class);
+		
+		when(managerDAO.logInVerification(eq("mrmanager"), eq("password"), eq(mockConnection))).thenReturn(manager);
+	
+	
+	}
+}

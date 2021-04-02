@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<!--  	<welcome-file-list> -->
+<!-- 		<welcome-file>index.html</welcome-file> -->
+<!-- 	</welcome-file-list> -->
+  <servlet>
+  	<servlet-name>EmployeeLogInServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.EmployeeLogInServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerLogInServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.ManagerLogInServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReimbursementForm</servlet-name>
+  	<servlet-class>com.revature.servlets.ReimbursementForm</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewPendingReimbursements</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewPendingReimbursements</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeHomeServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.EmployeeHomeServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>ViewResolvedReimbursementsServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewResolvedReimbursementsServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>UpdateEmployeeServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.UpdateEmployeeServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>ViewAllPendingReimbursementsServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewAllPendingReimbursementsServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>ViewAllEmployeesServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewAllEmployeesServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>EmployeeLogInServlet</servlet-name>
+  	<url-pattern>/EmployeeLogInServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerLogInServlet</servlet-name>
+  	<url-pattern>/ManagerLogInServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReimbursementForm</servlet-name>
+  	<url-pattern>/ReimbursementForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewPendingReimbursements</servlet-name>
+  	<url-pattern>/ViewPendingReimbursements</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeHomeServlet</servlet-name>
+  	<url-pattern>/EmployeeHomeServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>ViewResolvedReimbursementsServlet</servlet-name>
+  	<url-pattern>/ViewResolvedReimbursementsServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>UpdateEmployeeServlet</servlet-name>
+  	<url-pattern>/UpdateEmployeeServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>ViewAllPendingReimbursementsServlet</servlet-name>
+  	<url-pattern>/ViewAllPendingReimbursementsServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>ViewAllEmployeesServlet</servlet-name>
+  	<url-pattern>/ViewAllEmployeesServle</url-pattern>
+  </servlet-mapping>
+  
+
+</web-app>

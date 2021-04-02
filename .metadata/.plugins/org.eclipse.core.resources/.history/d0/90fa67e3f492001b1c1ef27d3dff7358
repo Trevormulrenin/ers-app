@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+	<div class="container" id="all-by-id" style="display:none">
+		<table>
+			placeholder_AllById
+		</table>
+	</div>
+	
+	<script>
+		function showTable() {
+			var show = document.getElementById("all-by-id");
+			show.style.display = "block";
+		}
+	</script>

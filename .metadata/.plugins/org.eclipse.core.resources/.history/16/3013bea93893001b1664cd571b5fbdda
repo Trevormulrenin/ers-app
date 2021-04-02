@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+document.getElementById("approve").addEventListener("click",() => approve);
+document.getElementById("deny").addEventListener("click",() => deny);
+
+function approve(){
+	fetch('http://localhost:8080/ers-app/ApproveOrDenyReimbursementServlet', {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			approveOrDeny: document.getElementById("approve").value,
+			reimbursementId: document.getElementById("r-id").value
+		})
+	})
+		.then(response => { console.log(response.text()) })
+		.catch(err => console.log(err))
+}
+
+function deny() {
+
+	fetch('http://localhost:8080/ers-app/ApproveOrDenyReimbursementServlet', {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			approveOrDeny: document.getElementById("deny").value,
+			reimbursementId: document.getElementById("r-id").value
+		})
+	})
+		.then(response => { console.log(response.text()) })
+		.catch(err => console.log(err))
+}
+
+

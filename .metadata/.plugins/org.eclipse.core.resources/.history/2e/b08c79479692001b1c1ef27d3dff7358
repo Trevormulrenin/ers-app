@@ -1,0 +1,9 @@
+package com.revature.servlets;
+
+public class ApproveOrDenyReimbursementServlet extends HttpServlet{
+
+	public ApproveOrDenyReimbursementServlet(){
+	
+	}
+
+}

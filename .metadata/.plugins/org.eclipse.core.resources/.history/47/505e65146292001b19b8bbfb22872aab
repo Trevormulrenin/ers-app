@@ -1,0 +1,9 @@
+package com.revature.exceptions;
+
+public class ManagerNotFoundException extends Exception {
+
+	public ManagerNotFoundException() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

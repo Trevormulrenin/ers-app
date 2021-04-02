@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+
+
+
+var approve = function() {
+
+	fetch('http://localhost:9731/ers-app/ApproveOrDenyReimbursementServlet', {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			approveOrDeny: document.getElementById("approve").value,
+			reimbursementId: document.getElementById("r-id").value
+		})
+	})
+		.then(response => { console.log(response.text()) })
+		.catch(err => console.log(err))
+}
+
+var deny = function() {
+
+	fetch('http://localhost:9731/ers-app/ApproveOrDenyReimbursementServlet', {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			approveOrDeny: document.getElementById("deny").value,
+			reimbursementId: document.getElementById("r-id").value
+		})
+	})
+		.then(response => { console.log(response.text()) })
+		.catch(err => console.log(err))
+}
+
+

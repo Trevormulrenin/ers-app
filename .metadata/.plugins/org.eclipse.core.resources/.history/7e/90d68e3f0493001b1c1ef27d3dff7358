@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+ 	
+<title>Expense Reimbursement System</title>
+</head>
+<style>
+#pending-reimbursement, #resolved-reimbursement {
+	border: 2px solid black;
+	color: black;
+	text-align:center;
+	height: 300px;
+	width: 400px;
+	position: relative;
+    top:50%;
+    left: 23%;
+    display: inline-block;
+}
+
+#pending-reimbursement {
+	float: left;
+}
+
+#resolved-reimbursement:hover {
+	background-color: gray;
+	color:white;
+}
+
+#pending-reimbursement:hover {
+	background-color: gray;
+	color:white;
+}
+
+#welcome-message {
+	font-size: 10px;
+	top:20%;
+}
+</style>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="http://localhost:9731/ers-app/EmployeeHomeServlet">Expense Reimbursement System</a>
+				<a class="nav-item nav-link" href="http://localhost:9731/ers-app/EmployeeHomeServlet">Home</a>
+				<a class="nav-item nav-link" href="html/reimbursement_home.html">Submit a reimbursement</a>
+				<a class="nav-item nav-link" href="html/employee_info.html">Update Employee Information</a>
+			
+			<div class="nav-list-right" id="navbar-menu-right">
+				<a class="nav-item nav-link" href="html/logout.html">Log out</a>
+			</div>
+			
+		</nav>
+	</div>
+	
+	
+	<div id="welcome-message">
+		<h1 style="font-size: 20px; top:65%; left:20%;">Welcome placeholder_eName</h1>
+	</div>
+	
+	<div id="reimbursement-body">
+	
+	<form action="../ers-app/ViewPendingReimbursements" method="get">
+		<button type="submit" class="button" id="pending-reimbursement" >View Pending Reimbursements</button>
+	</form>
+	<form action="../ers-app/ViewResolvedReimbursementsServlet" method="get">
+		<button type="submit" id="resolved-reimbursement" class="button">View Resolved Reimbursements</button>
+	</form>
+		
+	</div>
+	
+	<script type="text/javascript">
+		var button = document.getElementById('reimbursement-body');
+		button.addEventListener('click', function() { button.style.display = 'none'; });
+	</script>
+	
+</body>
+
+ 	
+</html>
+	

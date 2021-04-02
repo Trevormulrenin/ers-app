@@ -1,0 +1,30 @@
+package com.revature.services;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.sql.Connection;
+
+import org.junit.BeforeClass;
+import org.mockito.MockedStatic;
+
+import com.revature.dao.EmployeeDAO;
+import com.revature.model.Employee;
+import com.revature.util.ConnectionUtil;
+
+public class EmployeeServiceTest {
+	EmployeeService employeeService;
+	public static Connection mockConnection;
+	public static MockedStatic<ConnectionUtil> mockedStatic;
+	public static EmployeeDAO employeeDAO;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		employeeDAO = mock(EmployeeDAO.class);
+		mockConnection = mock(Connection.class);
+		
+		Employee employee = new Employee(2, "joesmith", "password123", "Joe", "Smith", "joesmith@gmail.com");
+		when(employeeDAO.logInVerification(eq("joesmith"), eq("password123"), eq(mockConnection)).thenReturn(employee);
+	}
+	
+}

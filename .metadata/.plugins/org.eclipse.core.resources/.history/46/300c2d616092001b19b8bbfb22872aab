@@ -1,0 +1,60 @@
+package com.revature.services;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import com.revature.dao.EmployeeDAO;
+import com.revature.model.Employee;
+import com.revature.util.ConnectionUtil;
+
+public class EmployeeServiceTest {
+	EmployeeService employeeService;
+	public static Connection mockConnection;
+	public static MockedStatic<ConnectionUtil> mockedStatic;
+	public static EmployeeDAO employeeDAO;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		employeeDAO = mock(EmployeeDAO.class);
+		mockConnection = mock(Connection.class);
+		
+		Employee employee = new Employee(2, "joesmith", "password123", "Joe", "Smith", "joesmith@gmail.com");
+		when(employeeDAO.logInVerification(eq("joesmith"), eq("password123"), eq(mockConnection)).thenReturn(employee));
+	}
+	
+	@Before
+	public void setUp() throws Exception {
+		employeeService = new EmployeeService(employeeDAO);
+	}
+	
+	@Test
+	public void testValidUsername() throws SQLException {
+		try (MockedStatic<ConnectionUtil> mockedStatic = Mockito.mockStatic(ConnectionUtil.class)) {
+			mockedStatic.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
+			Employee actual = employeeService.employeeLogIn("joesmith1111", "password123");
+			Employee expected = new Employee(2, "joesmith", "password123", "Joe", "Smith", "joesmith@gmail.com");
+			
+			assertEquals(expected, actual);
+		}
+	}
+	
+	@Test(expected = SQLException.class)
+	public void testInvalidUsername() throws SQLException {
+		try (MockedStatic<ConnectionUtil> mockedStatic = Mockito.mockStatic(ConnectionUtil.class)) {
+			mockedStatic.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
+			employeeService.employeeLogIn("123", "password");
+		}	
+	}	
+}

@@ -1,0 +1,42 @@
+package com.revature.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.revature.services.ManagerService;
+
+
+public class ApproveOrDenyReimbursementServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public ApproveOrDenyReimbursementServlet() {
+        super();
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+	
+		ManagerService ms = new ManagerService();
+		
+		int id = Integer.valueOf(request.getParameter("reimbursementId"));
+		String approveOrDeny = request.getParameter("approveOrDeny");
+		
+		if(approveOrDeny.equals("approve")) {
+			ms.approveReimbursementRequest(false, true, id);
+		} else if(approveOrDeny.equals("deny")) {
+			ms.denyReimbursementRequest(false, false, id);
+		}
+	}
+
+
+
+}

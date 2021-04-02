@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-with, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>Expense Reimbursement System</title>
+</head>
+
+<style>
+	#log-in-btn {
+		text-align:center;
+	}
+
+	.login {
+	border: 2px solid black;
+	content: 5px;
+    width: auto;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    box-shadow: white;
+	}
+	
+	.nav-item, .nav-item-active {
+ 		text-decoration: none; 
+		color: white;
+		border: 1px;
+		border-color:white;
+	}
+</style>
+
+<body>
+
+
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="../index.html">Expense Reimbursement System</a>
+					<a class="nav-item nav-link" href="../index.html">Home</a>
+					<a class="nav-item nav-link active" id="nav-item-right" href="employee_login.html">Employee Log-In</a>
+					<a class="nav-item nav-link" id="nav-item-right" href="manager_login.html">Manager Log-In</a>
+			
+		</nav>
+	</div>
+
+
+	<div class="container" id="log-in-div">
+		<h2>Employee Log-In</h2>
+		<p id="enter-credentials">Please enter your credentials below</p>
+
+		<div class="login">
+			<form action="ers-app/EmployeeLogInServlet" method="get">
+				<div class="form-group">
+					<label for="employeeUsername">Username</label>
+					<input type="text" class="form-control" name="employeeUsername" id="employeeUsername" placeholder="Enter Username:" required>
+				</div>
+				<div class="form-group">
+					<label for="employeePassword">Password</label>
+					<input type="password" class="form-control" name="employeePassword" id="employeePassword" placeholder="Enter Password:" required>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="form-control" id="log-in-btn">Log-In</button>
+					<p id="invalid"></p>
+				</div>
+			</form>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript" src="js/employee_login.js"></script>
+</body>
+</html>

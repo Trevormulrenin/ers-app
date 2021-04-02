@@ -1,0 +1,9 @@
+function login() {
+	fetch('/EmployeeLogInServlet')
+		method: "POST",
+		body: JSON.stringify({
+			username: document.getElementById("employeeUsername").value,
+			password: document.getElementById("employeePassword").value
+		})
+		.then(response => response.text())
+}

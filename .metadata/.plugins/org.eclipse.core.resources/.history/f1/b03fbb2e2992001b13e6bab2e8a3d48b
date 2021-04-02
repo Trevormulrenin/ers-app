@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+#navbar-menu-right{
+	text-decoration: none;
+	color: black;
+}
+
+.nav-item, .nav-item-active, .nav-list-right {
+		color: white;
+		border: 1px;
+		border-color:white;
+	}
+
+h1 {
+	text-align: center;
+    font-family: Lato;
+    color: Black;
+    font-size: 40px;
+    margin: 50px;
+}
+
+p {
+	text-align: center;
+    font-family: Lato;
+	color: Black;
+	font-size: 15px;
+}
+
+h2 {
+	text-align: center;
+    font-family: Lato;
+    color: Black;
+    font-size: 40px;
+    margin: 25px;
+}
+
+#enter-credentials {
+	text-align: center;
+    font-family: Lato;
+	color: Black;
+	font-size: 20px;
+}
+
+
+#pending-reimbursement, #resolved-reimbursement {
+	border: 2px solid black;
+	color: black;
+	text-align:center;
+	height: 300px;
+	width: 400px;
+    top:30%;
+    left:10%;
+/*     display: flex; */
+/* 	justify-content: space-evenly; */
+}
+
+#pending-reimbursement {
+	float: left;
+}
+
+#resolved-reimbursement:hover {
+	background-color: gray;
+	color:white;
+}
+
+#pending-reimbursement:hover {
+	background-color: gray;
+	
+	color:white;
+}
+
+#pending-table, #resolved-table {
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:20%;
+	border: 2px solid black;
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+.nav-item, .nav-item-active, .nav-list-right {
+/* 		text-decoration: none; */
+		color: white;
+		border: 1px;
+		border-color:white;
+	}
+	
+th, tr {
+	border: 2px;
+}
+
+#log-in-button {
+	text-align: center;
+}
+
+.login {
+	border: 2px solid black;
+	content: 5px;
+	width: auto;
+	text-align: center;
+	padding: 5px;
+	margin: auto;
+	box-shadow: white;
+}
+
+#update-table {
+	width: "100%";
+	padding: 2px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+#reimbursement-table {
+	width: "100%";
+	padding: 2px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+.log-in-button {
+	text-align: center;
+	margin-top: 10px;
+}

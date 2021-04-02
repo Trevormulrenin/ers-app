@@ -1,0 +1,14 @@
+document.getElementById('pending-reimbursement').onclick = displayPending;
+
+function displayPending() {
+	var xhr = new XMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			var response = JSON.parse(xhr.responseText);
+			getPendingReimbursements(response);
+		}
+	}
+	
+	xhr.open("GET", "../pending")
+}

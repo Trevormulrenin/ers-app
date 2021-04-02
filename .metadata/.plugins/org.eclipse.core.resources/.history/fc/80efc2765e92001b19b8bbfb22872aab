@@ -1,0 +1,21 @@
+package com.revature.services;
+
+import java.sql.Connection;
+
+import org.mockito.MockedStatic;
+
+import com.revature.dao.EmployeeDAO;
+import com.revature.util.ConnectionUtil;
+
+public class EmployeeServiceTest {
+	EmployeeService employeeService;
+	public static Connection mockConnection;
+	public static MockedStatic<ConnectionUtil> mockedStatic;
+	public static EmployeeDAO employeeDAO;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		employeeDAO = mock(EmployeeDAO.class);
+		mockConnection = mock(Connection.class);
+
+}

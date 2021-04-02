@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>Expense Reimbursement System</title>
+</head>
+
+<style>
+#navbarMenuRight {
+	text-decoration: none;
+	color: black;
+}
+
+h1 {
+	text-align:center;
+	color: black;
+}
+
+.nav-item, .nav-item-active, .nav-list-right {
+		color: white;
+		border: 1px;
+		border-color:white;
+}
+
+#all-by-id {
+border-collapse: collapse;
+border-spacing: 5px;
+border: 2px solid black;
+}
+
+</style>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="html/manager_home.html">Expense Reimbursement System</a>
+				<a class="nav-item nav-link" href="html/manager_home.html">Home</a>
+				<a class="nav-item nav-link" href="./ViewAllPendingReimbursementsServlet">View all Pending Reimbursements</a>
+				<a class="nav-item nav-link" href="./ViewAllResolvedReimbursementsServlet">View all Resolved Reimbursements</a>
+				<a class="nav-item nav-link" href="html/reimbursement_by_id.html">View all Reimbursements by Employee Id</a>
+				<a class="nav-item nav-link" href="./ViewAllEmployeesServlet">View all Employees</a>
+			
+			<div class="nav-list-right" id="navbarMenuRight">
+				<a href="logout.html">Log out</a>
+			</div>
+			
+		</nav>
+	</div>
+	
+
+	<div class="container" id="all-by-id">
+		<table>
+			placeholder_AllById
+		</table>
+	</div>
+	
+	<script>
+		function showTable() {
+			var show = document.getElementById("all-by-id");
+			show.style.display = "block";
+		}
+	</script>
+
+	</body>
+	</html>

@@ -1,0 +1,36 @@
+package com.revature.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.revature.services.ManagerService;
+
+/**
+ * Servlet implementation class ManagerLogInServlet
+ */
+public class ManagerLogInServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	ManagerService ms = new ManagerService();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		String un = request.getParameter("managerUsername");
+		String pw = request.getParameter("managerPassword");
+
+		try {
+			ms.managerLogIn(un, pw);
+			out.print("Welcome to the manager homepage " + un);
+		} catch (SQLException e) {
+			out.print("<h1> Incorrect Username or Password. Please try again");
+		}
+	}
+}
