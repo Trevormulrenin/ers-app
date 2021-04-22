@@ -21,4 +21,5 @@ Generally improve the UI for the entire website. Can transfer the HTML, CSS, and
 Getting Started
 
 Clone the repository through GitBash 
+
 Set up environment variables through run configuration
